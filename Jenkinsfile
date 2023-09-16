@@ -57,6 +57,7 @@ pipeline {
 			                  git remote set-url origin https://$GIT_USERNAME:$GIT_PASSWORD@github.com/github-cloudcontainer/java-application.git
 			                  git push
 			              '''
+				}
                 }
             }
         }        
