@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-app-deployment
+  labels:
+    app: java
+  annotations:
+    kubernetes.io/change-cause: "Version 1"
+spec:
+  replicas: 6
+  minReadySeconds: 10
+  strategy:
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: java
+  template:
+    metadata:
+      labels:
+        app: java
+    spec:
+      containers:
+      - name: java
+        image: 021059192275.dkr.ecr.ap-south-1.amazonaws.com/my-java-application:11
+        ports:
+        - containerPort: 8080
