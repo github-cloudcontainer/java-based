@@ -4,8 +4,6 @@ metadata:
   name: java-app-deployment
   labels:
     app: java
-  annotations:
-    kubernetes.io/change-cause: "Version 1"
 spec:
   replicas: 6
   minReadySeconds: 10
