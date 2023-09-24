@@ -52,7 +52,7 @@ pipeline {
 		                sh '''
 			                  git config user.email "githubcloudcontainer@gmail.com"
 			                  git config user.name "github-cloudcontainer"
-			                  git add deployment.yaml
+			                  git add deployment/deployment.yaml
 			                  git commit -m "Update image tag to ${BUILD_NUMBER}"
 			                  git remote set-url origin https://$GIT_USERNAME:$GIT_PASSWORD@github.com/github-cloudcontainer/java-application.git
 			                  git push
