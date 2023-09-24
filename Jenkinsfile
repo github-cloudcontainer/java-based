@@ -46,7 +46,7 @@ pipeline {
             steps {
                 script {
 		                // Update image tag in deployment.yaml
-                    sh "sed -i 's|021059192275.dkr.ecr.ap-south-1.amazonaws.com/my-java-application:[0-9]*|${DOCKER_IMAGE}:${BUILD_NUMBER}|g' deployment.yaml"
+                    sh "sed -i 's|021059192275.dkr.ecr.ap-south-1.amazonaws.com/my-java-application:[0-9]*|${DOCKER_IMAGE}:${BUILD_NUMBER}|g' deployment/deployment.yaml"
                     // Set Git credentials
 		                withCredentials([usernamePassword(credentialsId: 'java_repo_creds', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
 		                sh '''
